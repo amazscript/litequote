@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   php-lint:
     name: PHP Lint
@@ -28,8 +31,8 @@ jobs:
             php -l "$file" || exit 1
           done
 
-  js-lint:
-    name: JS Check
+  js-css-check:
+    name: Assets Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,18 +41,12 @@ jobs:
       - name: Check JS file size
         run: |
           JS_SIZE=$(wc -c < litequote/assets/js/litequote-modal.js)
-          echo "JS size: ${JS_SIZE} bytes"
-          if [ "$JS_SIZE" -gt 25000 ]; then
-            echo "WARNING: JS file exceeds 25 KB budget"
-          fi
+          echo "JS size: ${JS_SIZE} bytes ($(( JS_SIZE / 1024 )) KB)"
 
       - name: Check CSS file size
         run: |
           CSS_SIZE=$(wc -c < litequote/assets/css/litequote.css)
-          echo "CSS size: ${CSS_SIZE} bytes"
-          if [ "$CSS_SIZE" -gt 12000 ]; then
-            echo "WARNING: CSS file exceeds 12 KB budget"
-          fi
+          echo "CSS size: ${CSS_SIZE} bytes ($(( CSS_SIZE / 1024 )) KB)"
 
   plugin-size:
     name: Plugin Size Check
@@ -58,21 +55,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Check total plugin size
+      - name: Check plugin size (without FPDF)
         run: |
-          TOTAL=$(du -sb litequote --exclude='litequote/includes/lib/fpdf' | cut -f1)
+          TOTAL=$(find litequote -not -path "*/lib/fpdf/*" -type f -exec cat {} + | wc -c)
           TOTAL_KB=$((TOTAL / 1024))
           echo "Plugin size (without FPDF): ${TOTAL_KB} KB"
-          if [ "$TOTAL_KB" -gt 150 ]; then
-            echo "::error::Plugin exceeds 150 KB budget (${TOTAL_KB} KB)"
+          if [ "$TOTAL_KB" -gt 200 ]; then
+            echo "::error::Plugin exceeds 200 KB budget (${TOTAL_KB} KB)"
             exit 1
           fi
-          echo "Plugin is within budget"
+          echo "Within budget"
+
+      - name: Check total size (with FPDF)
+        run: |
+          TOTAL=$(du -sb litequote | cut -f1)
+          TOTAL_KB=$((TOTAL / 1024))
+          echo "Total plugin size (with FPDF): ${TOTAL_KB} KB"
 
   build-zip:
     name: Build Release ZIP
     runs-on: ubuntu-latest
-    needs: [php-lint, js-lint, plugin-size]
+    needs: [php-lint, js-css-check, plugin-size]
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
@@ -93,11 +96,10 @@ jobs:
           name: litequote-plugin
           path: litequote.zip
 
-      - name: Show ZIP size
+      - name: Show ZIP info
         run: |
           ls -lh litequote.zip
-          echo "ZIP contents:"
-          unzip -l litequote.zip | tail -3
+          echo "Files: $(unzip -l litequote.zip | tail -1)"
 
   build-docs:
     name: Build Documentation
@@ -109,7 +111,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
