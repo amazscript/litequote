@@ -19,7 +19,7 @@ Ultra-lightweight quote request plugin for WooCommerce. Replace "Add to Cart" wi
 **Why LiteQuote?**
 
 * **Under 150 KB** — 30x lighter than YITH Request a Quote (4-6 MB)
-* **$24 one-time** — no subscription, no recurring fees (vs $89/year for YITH)
+* **From €29 one-time** — no subscription, no recurring fees (vs $89/year for YITH)
 * **Zero jQuery** — pure vanilla JS, no legacy dependencies
 * **WhatsApp built-in** — the only quote plugin with native WhatsApp support
 * **GDPR-safe** — no external API calls, no cookies, no Google reCAPTCHA
