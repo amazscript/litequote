@@ -60,8 +60,9 @@ jobs:
           TOTAL=$(find litequote -not -path "*/lib/fpdf/*" -type f -exec cat {} + | wc -c)
           TOTAL_KB=$((TOTAL / 1024))
           echo "Plugin size (without FPDF): ${TOTAL_KB} KB"
-          if [ "$TOTAL_KB" -gt 200 ]; then
-            echo "::error::Plugin exceeds 200 KB budget (${TOTAL_KB} KB)"
+          # Budget: 300 KB (includes 7 languages ~100 KB)
+          if [ "$TOTAL_KB" -gt 300 ]; then
+            echo "::error::Plugin exceeds 300 KB budget (${TOTAL_KB} KB)"
             exit 1
           fi
           echo "Within budget"
