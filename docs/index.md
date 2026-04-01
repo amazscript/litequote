@@ -42,7 +42,7 @@ features:
 | | LiteQuote | YITH Request a Quote | Addify |
 |---|---|---|---|
 | **Size** | < 150 KB | 4-6 MB | ~2 MB |
-| **Price** | $24 one-time | $89/year | $59/year |
+| **Price** | From €29 one-time | $89/year | $59/year |
 | **jQuery** | None | Required | Required |
 | **WhatsApp** | Built-in | No | No |
 | **GDPR** | Native | reCAPTCHA (Google) | reCAPTCHA |

@@ -4,10 +4,11 @@ LiteQuote for WooCommerce is released under the **GNU General Public License v2.
 
 ## Tiers
 
-| Tier | License | Price |
+| License Type | License | Price |
 |---|---|---|
-| Pro | Single site | $24 one-time |
-| Extended | Unlimited sites (same owner) | $49 one-time |
+| Personal | Single site | €29 one-time |
+| Commercial | Multiple sites (same owner) | €58 one-time |
+| Extended | Unlimited sites (same owner) | €145 one-time |
 
 ## What's Included
 

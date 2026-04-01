@@ -188,11 +188,11 @@ litequote/
 
 ## Offre commerciale (contexte)
 
-| Tier | Nom | Prix | Modules |
-|---|---|---|---|
-| 1 | Basic Snippet | 9 EUR | Code PHP functions.php uniquement |
-| 2 | Pro Plugin | 24 EUR | Core + Form + Notification + WhatsApp + Honeypot |
-| 3 | Master Extended | 49 EUR | Tout Tier 2 + Mode Catalogue + PDF Auto + Support 6 mois |
+| License Type | Prix | Modules |
+|---|---|---|
+| Personal License | 29 EUR | Core + Form + Notification + WhatsApp + Honeypot + Dashboard + Send Quotes |
+| Commercial License | 58 EUR | Tout Personal + Droits d'utilisation commerciale |
+| Extended License | 145 EUR | Tout Commercial + Mode Catalogue + PDF Auto + Support 6 mois |
 
 ## Roadmap
 

@@ -152,18 +152,18 @@ A la fin de ce sprint :
 
 ## Livrables finaux par tier
 
-### Tier 1 — Basic Snippet (9 EUR)
-- [ ] `snippet-litequote-basic.php`
-- [ ] `README.txt`
-
-### Tier 2 — Pro Plugin (24 EUR)
-- [ ] `litequote-pro.zip`
-- [ ] `documentation-litequote-pro.pdf` (avec section SMTP en premier)
+### Personal License (29 EUR)
+- [ ] `litequote-personal.zip`
+- [ ] `documentation-litequote.pdf` (avec section SMTP en premier)
 - [ ] `changelog.txt`
 - [ ] `license.txt`
 
-### Tier 3 — Master Extended (49 EUR)
-- [ ] Tout le Tier 2
+### Commercial License (58 EUR)
+- [ ] Tout le Personal
+- [ ] Droits d'utilisation commerciale
+
+### Extended License (145 EUR)
+- [ ] Tout le Commercial
 - [ ] Module PDF active
 - [ ] `template-email-admin.html`
 - [ ] `template-email-client.html`

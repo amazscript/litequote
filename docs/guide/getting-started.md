@@ -14,10 +14,11 @@ LiteQuote for WooCommerce replaces the "Add to Cart" button with a "Request a Qu
 
 ## Pricing Tiers
 
-| Tier | Price | Includes |
+| License Type | Price | Includes |
 |---|---|---|
-| **Pro** | $24 one-time | Core + Modal + Emails + WhatsApp + Honeypot + Dashboard + Send Quotes |
-| **Extended** | $49 one-time | Everything in Pro + PDF Generation + PDF Quotes + 6 months support |
+| **Personal License** | €29 one-time | Core + Modal + Emails + WhatsApp + Honeypot + Dashboard + Send Quotes |
+| **Commercial License** | €58 one-time | Everything in Personal + Commercial use rights |
+| **Extended License** | €145 one-time | Everything in Commercial + PDF Generation + PDF Quotes + 6 months support |
 
 ## System Requirements
 
