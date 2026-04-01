@@ -1,0 +1,59 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: PHP Lint
+        run: |
+          find litequote -name "*.php" -not -path "*/lib/fpdf/*" | while read file; do
+            php -l "$file" || exit 1
+          done
+
+      - name: Build ZIP
+        run: |
+          cd litequote
+          zip -r ../litequote.zip . \
+            -x "includes/class-litequote-smtp-dev.php" \
+            -x ".DS_Store" \
+            -x "*/.DS_Store" \
+            -x "*.po~"
+
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: LiteQuote v${{ steps.version.outputs.VERSION }}
+          body: |
+            ## LiteQuote for WooCommerce v${{ steps.version.outputs.VERSION }}
+
+            ### Installation
+            1. Download `litequote.zip` below
+            2. Go to **Plugins > Add New > Upload Plugin** in WordPress admin
+            3. Upload the ZIP and activate
+
+            ### Requirements
+            - WordPress 6.6+
+            - WooCommerce 8.0+
+            - PHP 8.0+
+            - SMTP plugin (FluentSMTP recommended)
+
+            See [full changelog](https://github.com/${{ github.repository }}/blob/main/docs/changelog.md).
+          files: litequote.zip
+          draft: false
+          prerelease: false

@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  php-lint:
+    name: PHP Lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['8.0', '8.1', '8.2', '8.3']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: PHP Syntax Check
+        run: |
+          find litequote -name "*.php" -not -path "*/lib/fpdf/*" | while read file; do
+            php -l "$file" || exit 1
+          done
+
+  js-lint:
+    name: JS Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check JS file size
+        run: |
+          JS_SIZE=$(wc -c < litequote/assets/js/litequote-modal.js)
+          echo "JS size: ${JS_SIZE} bytes"
+          if [ "$JS_SIZE" -gt 25000 ]; then
+            echo "WARNING: JS file exceeds 25 KB budget"
+          fi
+
+      - name: Check CSS file size
+        run: |
+          CSS_SIZE=$(wc -c < litequote/assets/css/litequote.css)
+          echo "CSS size: ${CSS_SIZE} bytes"
+          if [ "$CSS_SIZE" -gt 12000 ]; then
+            echo "WARNING: CSS file exceeds 12 KB budget"
+          fi
+
+  plugin-size:
+    name: Plugin Size Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check total plugin size
+        run: |
+          TOTAL=$(du -sb litequote --exclude='litequote/includes/lib/fpdf' | cut -f1)
+          TOTAL_KB=$((TOTAL / 1024))
+          echo "Plugin size (without FPDF): ${TOTAL_KB} KB"
+          if [ "$TOTAL_KB" -gt 150 ]; then
+            echo "::error::Plugin exceeds 150 KB budget (${TOTAL_KB} KB)"
+            exit 1
+          fi
+          echo "Plugin is within budget"
+
+  build-zip:
+    name: Build Release ZIP
+    runs-on: ubuntu-latest
+    needs: [php-lint, js-lint, plugin-size]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build ZIP
+        run: |
+          cd litequote
+          zip -r ../litequote.zip . \
+            -x "includes/class-litequote-smtp-dev.php" \
+            -x ".DS_Store" \
+            -x "*/.DS_Store" \
+            -x "*.po~"
+
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: litequote-plugin
+          path: litequote.zip
+
+      - name: Show ZIP size
+        run: |
+          ls -lh litequote.zip
+          echo "ZIP contents:"
+          unzip -l litequote.zip | tail -3
+
+  build-docs:
+    name: Build Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build docs
+        run: npm run docs:build

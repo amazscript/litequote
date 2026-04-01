@@ -1,0 +1,32 @@
+# Environment
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker volumes
+# wp_data and db_data are managed by Docker
+
+# Node
+node_modules/
+
+# Composer
+vendor/
+
+# Build artifacts
+*.zip
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# CDC document (confidential)
+*.docx
+
+# Backup files
+*.po~

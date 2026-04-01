@@ -1,0 +1,105 @@
+services:
+
+  # WordPress + PHP 8.2
+  wordpress:
+    image: wordpress:6.8-php8.2-apache
+    container_name: litequote-wp
+    restart: unless-stopped
+    ports:
+      - "${WP_PORT:-8080}:80"
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DEBUG: "1"
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_DEBUG_LOG', true);
+        define('WP_DEBUG_DISPLAY', true);
+        define('SCRIPT_DEBUG', true);
+        define('WP_CACHE', true);
+        define('WP_REDIS_HOST', 'redis');
+        define('WP_REDIS_PORT', 6379);
+    volumes:
+      - wp_data:/var/www/html
+      - ./litequote:/var/www/html/wp-content/plugins/litequote
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      mailpit:
+        condition: service_started
+
+  # MySQL 8.0
+  db:
+    image: mysql:8.0
+    container_name: litequote-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # WP-CLI (run commands with: docker compose run --rm wpcli <command>)
+  wpcli:
+    image: wordpress:cli-2.11-php8.2
+    container_name: litequote-wpcli
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+    volumes:
+      - wp_data:/var/www/html
+      - ./litequote:/var/www/html/wp-content/plugins/litequote
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles:
+      - cli
+
+  # Mailpit — Capture tous les emails (remplace Mailhog)
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: litequote-mailpit
+    restart: unless-stopped
+    ports:
+      - "${MAILPIT_UI_PORT:-8025}:8025"
+      - "${MAILPIT_SMTP_PORT:-1025}:1025"
+
+  # Redis — Cache objet WordPress
+  redis:
+    image: redis:7-alpine
+    container_name: litequote-redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+
+  # phpMyAdmin — Interface BDD
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: litequote-pma
+    restart: unless-stopped
+    ports:
+      - "${PHPMYADMIN_PORT:-8081}:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  wp_data:
+  db_data:

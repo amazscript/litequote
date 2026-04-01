@@ -1,0 +1,746 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the LiteQuote package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: LiteQuote 2.0.0\n"
+"Report-Msgid-Bugs-To: contact@amazscript.com\n"
+"POT-Creation-Date: 2026-04-01 10:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: admin/class-litequote-admin.php:37
+msgid "General"
+msgstr ""
+
+#: admin/class-litequote-admin.php:38
+msgid "Button"
+msgstr ""
+
+#: admin/class-litequote-admin.php:39
+msgid "Emails"
+msgstr ""
+
+#: admin/class-litequote-admin.php:40
+msgid "WhatsApp"
+msgstr ""
+
+#: admin/class-litequote-admin.php:41
+msgid "PDF"
+msgstr ""
+
+#: admin/class-litequote-admin.php:42
+msgid "Advanced"
+msgstr ""
+
+#: admin/class-litequote-admin.php:52 admin/class-litequote-admin.php:148
+msgid "LiteQuote Settings"
+msgstr ""
+
+#: admin/class-litequote-admin.php:184
+msgid "Save Changes"
+msgstr ""
+
+#: admin/class-litequote-admin.php:202
+msgid "Trigger Mode"
+msgstr ""
+
+#: admin/class-litequote-admin.php:205
+msgid "Products with price = 0"
+msgstr ""
+
+#: admin/class-litequote-admin.php:206
+msgid "Products with checkbox enabled"
+msgstr ""
+
+#: admin/class-litequote-admin.php:207
+msgid "Both (zero price + checkbox)"
+msgstr ""
+
+#: admin/class-litequote-admin.php:209
+msgid "Choose how products enter quote mode."
+msgstr ""
+
+#: admin/class-litequote-admin.php:213
+msgid "Catalogue Mode"
+msgstr ""
+
+#: admin/class-litequote-admin.php:217
+msgid "Enable catalogue mode for the entire shop"
+msgstr ""
+
+#: admin/class-litequote-admin.php:219
+msgid ""
+"Hides all prices and add-to-cart buttons. Every product shows a quote button."
+msgstr ""
+
+#: admin/class-litequote-admin.php:223
+msgid "Exclude Product IDs"
+msgstr ""
+
+#: admin/class-litequote-admin.php:226
+msgid "Comma-separated product IDs to exclude from catalogue mode."
+msgstr ""
+
+#: admin/class-litequote-admin.php:230
+msgid "Exclude Categories"
+msgstr ""
+
+#: admin/class-litequote-admin.php:244
+msgid "No product categories found."
+msgstr ""
+
+#: admin/class-litequote-admin.php:265
+msgid "Button Text"
+msgstr ""
+
+#: admin/class-litequote-admin.php:271
+msgid "Background Color"
+msgstr ""
+
+#: admin/class-litequote-admin.php:277
+msgid "Text Color"
+msgstr ""
+
+#: admin/class-litequote-admin.php:283
+msgid "Button Position"
+msgstr ""
+
+#: admin/class-litequote-admin.php:286
+msgid "Before add-to-cart form"
+msgstr ""
+
+#: admin/class-litequote-admin.php:287
+msgid "After add-to-cart form"
+msgstr ""
+
+#: admin/class-litequote-admin.php:292
+msgid "Price Label"
+msgstr ""
+
+#: admin/class-litequote-admin.php:295
+msgid "Text displayed instead of the price (e.g. \"Price on request\")."
+msgstr ""
+
+#: admin/class-litequote-admin.php:299
+msgid "Preview"
+msgstr ""
+
+#: admin/class-litequote-admin.php:346
+msgid "Admin Email"
+msgstr ""
+
+#: admin/class-litequote-admin.php:349
+msgid "Quote requests will be sent to this address."
+msgstr ""
+
+#: admin/class-litequote-admin.php:353
+msgid "Auto-Reply"
+msgstr ""
+
+#: admin/class-litequote-admin.php:357
+msgid "Send a confirmation email to the customer after submission"
+msgstr ""
+
+#: admin/class-litequote-admin.php:362
+msgid "Auto-Reply Template"
+msgstr ""
+
+#: admin/class-litequote-admin.php:366 admin/class-litequote-admin.php:423
+msgid "Available variables:"
+msgstr ""
+
+#: admin/class-litequote-admin.php:371
+msgid "Restore Default Template"
+msgstr ""
+
+#: admin/class-litequote-admin.php:399
+msgid "WhatsApp Number"
+msgstr ""
+
+#: admin/class-litequote-admin.php:402
+msgid "International format with country code."
+msgstr ""
+
+#: admin/class-litequote-admin.php:406
+msgid "Display Mode"
+msgstr ""
+
+#: admin/class-litequote-admin.php:409
+msgid "Form only"
+msgstr ""
+
+#: admin/class-litequote-admin.php:410
+msgid "WhatsApp only"
+msgstr ""
+
+#: admin/class-litequote-admin.php:411
+msgid "Both (form + WhatsApp button)"
+msgstr ""
+
+#: admin/class-litequote-admin.php:414
+msgid "Enter a WhatsApp number to enable WhatsApp mode."
+msgstr ""
+
+#: admin/class-litequote-admin.php:419
+msgid "Message Template"
+msgstr ""
+
+#: admin/class-litequote-admin.php:428
+msgid "Restore Default Message"
+msgstr ""
+
+#: admin/class-litequote-admin.php:453
+msgid ""
+"PDF generation is available in the Extended tier. The FPDF library must be "
+"present in includes/lib/fpdf/."
+msgstr ""
+
+#: admin/class-litequote-admin.php:457
+msgid "Enable PDF Generation"
+msgstr ""
+
+#: admin/class-litequote-admin.php:461
+msgid "Generate a PDF for each quote request"
+msgstr ""
+
+#: admin/class-litequote-admin.php:466
+msgid "Shop Logo"
+msgstr ""
+
+#: admin/class-litequote-admin.php:474
+msgid "Select Logo"
+msgstr ""
+
+#: admin/class-litequote-admin.php:475
+msgid "Remove"
+msgstr ""
+
+#: admin/class-litequote-admin.php:479
+msgid "Local Archive"
+msgstr ""
+
+#: admin/class-litequote-admin.php:483
+msgid "Save PDFs to wp-content/uploads/litequote-quotes/"
+msgstr ""
+
+#: admin/class-litequote-admin.php:488
+msgid "Retention (days)"
+msgstr ""
+
+#: admin/class-litequote-admin.php:491
+msgid "Archived PDFs older than this will be automatically deleted."
+msgstr ""
+
+#: admin/class-litequote-admin.php:527
+msgid "Debug Mode"
+msgstr ""
+
+#: admin/class-litequote-admin.php:531
+msgid "Log blocked submissions (honeypot) to error_log"
+msgstr ""
+
+#: admin/class-litequote-admin.php:536
+msgid "Custom CSS"
+msgstr ""
+
+#: admin/class-litequote-admin.php:539
+msgid ""
+"Only modify if you know what you are doing. No &lt;script&gt; tags allowed."
+msgstr ""
+
+#: includes/class-litequote-core.php:106 includes/class-litequote-core.php:175
+msgid "Price on request"
+msgstr ""
+
+#: includes/class-litequote-core.php:128 litequote.php:184
+msgid "Request a Quote"
+msgstr ""
+
+#: includes/class-litequote-core.php:161 includes/class-litequote-email.php:146
+#: includes/class-litequote-quote-cpt.php:510
+msgid "View Product"
+msgstr ""
+
+#: includes/class-litequote-core.php:176
+msgid "Enable LiteQuote quote mode for this product."
+msgstr ""
+
+#: includes/class-litequote-core.php:298
+msgid ""
+"This shop works on a quote basis. Use the quote button on each product page "
+"to request pricing."
+msgstr ""
+
+#: includes/class-litequote-core.php:319
+msgid ""
+"Catalogue mode is active. All prices and add-to-cart buttons are hidden "
+"across the entire shop."
+msgstr ""
+
+#: includes/class-litequote-email.php:41
+#, php-format
+msgid "[LiteQuote] New quote request — %s"
+msgstr ""
+
+#: includes/class-litequote-email.php:70
+#, php-format
+msgid "Your quote request confirmation — %s"
+msgstr ""
+
+#: includes/class-litequote-email.php:118 includes/class-litequote-pdf.php:127
+#: includes/class-litequote-quote-cpt.php:485
+msgid "Name"
+msgstr ""
+
+#: includes/class-litequote-email.php:119 includes/class-litequote-pdf.php:129
+#: includes/class-litequote-quote-cpt.php:487 litequote.php:191
+msgid "Company"
+msgstr ""
+
+#: includes/class-litequote-email.php:122 includes/class-litequote-pdf.php:131
+#: includes/class-litequote-quote-cpt.php:489 litequote.php:192
+msgid "Email"
+msgstr ""
+
+#: includes/class-litequote-email.php:128 includes/class-litequote-pdf.php:133
+#: includes/class-litequote-quote-cpt.php:491 litequote.php:193
+msgid "Phone"
+msgstr ""
+
+#: includes/class-litequote-email.php:135
+#: includes/class-litequote-email.php:169 includes/class-litequote-pdf.php:141
+#: includes/class-litequote-pdf.php:145
+#: includes/class-litequote-quote-cpt.php:273
+#: includes/class-litequote-quote-cpt.php:498
+#: includes/class-litequote-quote-cpt.php:500
+#: includes/class-litequote-quote-cpt.php:677
+#: includes/class-litequote-quote-cpt.php:825
+msgid "Product"
+msgstr ""
+
+#: includes/class-litequote-email.php:136 includes/class-litequote-pdf.php:152
+#: includes/class-litequote-quote-cpt.php:507
+#: includes/class-litequote-quote-cpt.php:545
+#: includes/class-litequote-quote-cpt.php:707 litequote.php:194
+msgid "Quantity"
+msgstr ""
+
+#: includes/class-litequote-email.php:138 includes/class-litequote-pdf.php:147
+#: includes/class-litequote-quote-cpt.php:502
+msgid "SKU"
+msgstr ""
+
+#: includes/class-litequote-email.php:141 includes/class-litequote-pdf.php:150
+#: includes/class-litequote-quote-cpt.php:505
+msgid "Variation"
+msgstr ""
+
+#: includes/class-litequote-email.php:145
+#: includes/class-litequote-quote-cpt.php:509
+msgid "Links"
+msgstr ""
+
+#: includes/class-litequote-email.php:148
+#: includes/class-litequote-quote-cpt.php:512
+msgid "Edit"
+msgstr ""
+
+#: includes/class-litequote-email.php:155 includes/class-litequote-pdf.php:167
+#: includes/class-litequote-quote-cpt.php:521
+#: includes/class-litequote-quote-cpt.php:685
+msgid "Customer Message"
+msgstr ""
+
+#: includes/class-litequote-email.php:161
+msgid "New Quote Request"
+msgstr ""
+
+#: includes/class-litequote-email.php:165 includes/class-litequote-pdf.php:123
+#: includes/class-litequote-quote-cpt.php:272
+#: includes/class-litequote-quote-cpt.php:483
+#: includes/class-litequote-quote-cpt.php:671
+msgid "Customer"
+msgstr ""
+
+#: includes/class-litequote-email.php:177
+msgid "Re: Your quote request — "
+msgstr ""
+
+#: includes/class-litequote-email.php:179
+msgid "Reply to Customer"
+msgstr ""
+
+#: includes/class-litequote-email.php:239
+#, php-format
+msgid "Email automatically generated by %s"
+msgstr ""
+
+#: includes/class-litequote-form.php:45
+msgid "Session expired. Please reload the page and try again."
+msgstr ""
+
+#: includes/class-litequote-form.php:52
+msgid "Too many requests. Please try again in a few minutes."
+msgstr ""
+
+#: includes/class-litequote-form.php:61
+msgid "Thank you! Your quote request has been sent."
+msgstr ""
+
+#: includes/class-litequote-form.php:96 litequote.php:186
+msgid ""
+"Thank you! Your quote request has been sent. We will get back to you shortly."
+msgstr ""
+
+#: includes/class-litequote-pdf.php:109
+msgid "Quote Request"
+msgstr ""
+
+#: includes/class-litequote-pdf.php:157
+msgid "URL"
+msgstr ""
+
+#: includes/class-litequote-pdf.php:180
+#, php-format
+msgid "Automatically generated by LiteQuote — %s"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:40
+#: includes/class-litequote-quote-cpt.php:42
+#: includes/class-litequote-quote-cpt.php:119
+#: includes/class-litequote-quote-cpt.php:120
+#: includes/class-litequote-quote-cpt.php:231
+msgid "Quotes"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:41
+msgid "Quote"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:43
+msgid "All Quotes"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:44
+msgid "Search Quotes"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:45
+#: includes/class-litequote-quote-cpt.php:321
+msgid "No quotes found."
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:46
+msgid "No quotes found in trash."
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:79
+#: includes/class-litequote-quote-cpt.php:238
+#: includes/class-litequote-quote-cpt.php:293
+#: includes/class-litequote-quote-cpt.php:437
+msgid "Pending"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:80
+#, php-format
+msgid "Pending <span class=\"count\">(%s)</span>"
+msgid_plural "Pending <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-litequote-quote-cpt.php:84
+#: includes/class-litequote-quote-cpt.php:239
+#: includes/class-litequote-quote-cpt.php:294
+#: includes/class-litequote-quote-cpt.php:438
+msgid "Quoted"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:85
+#, php-format
+msgid "Quoted <span class=\"count\">(%s)</span>"
+msgid_plural "Quoted <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-litequote-quote-cpt.php:89
+#: includes/class-litequote-quote-cpt.php:240
+#: includes/class-litequote-quote-cpt.php:295
+#: includes/class-litequote-quote-cpt.php:439
+msgid "Accepted"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:90
+#, php-format
+msgid "Accepted <span class=\"count\">(%s)</span>"
+msgid_plural "Accepted <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-litequote-quote-cpt.php:94
+#: includes/class-litequote-quote-cpt.php:241
+#: includes/class-litequote-quote-cpt.php:296
+#: includes/class-litequote-quote-cpt.php:440
+msgid "Rejected"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:95
+#, php-format
+msgid "Rejected <span class=\"count\">(%s)</span>"
+msgid_plural "Rejected <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-litequote-quote-cpt.php:237
+msgid "All"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:271
+#: includes/class-litequote-quote-cpt.php:594
+msgid "Reference"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:274
+#: includes/class-litequote-quote-cpt.php:680
+#: includes/class-litequote-quote-cpt.php:827
+msgid "Qty"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:275
+#: includes/class-litequote-quote-cpt.php:592
+msgid "Date"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:276
+msgid "Status"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:277
+#: includes/class-litequote-quote-cpt.php:564
+msgid "Actions"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:313
+msgid "View"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:315
+msgid "Reply"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:454
+#: includes/class-litequote-quote-cpt.php:637
+msgid "Quote not found."
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:542
+#: includes/class-litequote-quote-cpt.php:696
+msgid "Your Quote"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:544
+#: includes/class-litequote-quote-cpt.php:700
+#: includes/class-litequote-quote-cpt.php:826
+msgid "Unit Price"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:547
+#: includes/class-litequote-quote-cpt.php:840
+msgid "Discount"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:549
+#: includes/class-litequote-quote-cpt.php:721
+#: includes/class-litequote-quote-cpt.php:844
+msgid "Total"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:551
+msgid "Valid for"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:551
+msgid "days"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:554
+msgid "Notes"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:568
+msgid "Send a Quote"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:573
+msgid "Reply by Email"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:579
+msgid "Change Status"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:585
+msgid "Update"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:591
+msgid "Info"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:664
+#, php-format
+msgid "Send Quote — %s"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:714
+msgid "Discount (%)"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:727
+msgid "Valid for (days)"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:734
+#: includes/class-litequote-quote-cpt.php:850
+msgid "Notes / Conditions"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:744
+msgid "Generate & Send Quote"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:747
+msgid "Save Draft"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:750
+msgid "Cancel"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:817
+#, php-format
+msgid "Quote %s"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:820
+#, php-format
+msgid "Dear %s,"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:821
+msgid "Thank you for your quote request. Please find our offer below:"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:828
+msgid "Subtotal"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:855
+#, php-format
+msgid "This quote is valid for %d days."
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:856
+#: includes/class-litequote-settings.php:38
+msgid "Best regards,"
+msgstr ""
+
+#: includes/class-litequote-quote-cpt.php:864
+#, php-format
+msgid "%1$s — Your Quote %2$s"
+msgstr ""
+
+#: includes/class-litequote-security.php:37 litequote.php:200
+msgid "Please enter your name."
+msgstr ""
+
+#: includes/class-litequote-security.php:44 litequote.php:201
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/class-litequote-security.php:51 litequote.php:202
+msgid "Invalid phone number."
+msgstr ""
+
+#: includes/class-litequote-settings.php:35
+msgid "Hello {client_name},"
+msgstr ""
+
+#: includes/class-litequote-settings.php:36
+msgid "We have received your quote request for"
+msgstr ""
+
+#: includes/class-litequote-settings.php:37
+msgid "We will get back to you shortly with our best offer."
+msgstr ""
+
+#: includes/class-litequote-settings.php:48
+msgid ""
+"Hello! I am interested in the product {product_name} (Ref. {sku}). Could you "
+"send me your best price? {product_url}"
+msgstr ""
+
+#: includes/class-litequote-whatsapp.php:53
+msgid "Chat on WhatsApp"
+msgstr ""
+
+#: litequote.php:185
+msgid "Sending..."
+msgstr ""
+
+#: litequote.php:187
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: litequote.php:188
+msgid "Send Request"
+msgstr ""
+
+#: litequote.php:189
+msgid "Close"
+msgstr ""
+
+#: litequote.php:190
+msgid "Full Name"
+msgstr ""
+
+#: litequote.php:195
+msgid "Message"
+msgstr ""
+
+#: litequote.php:196
+msgid "Your name"
+msgstr ""
+
+#: litequote.php:197
+msgid "Company name (optional)"
+msgstr ""
+
+#: litequote.php:198
+msgid "your@email.com"
+msgstr ""
+
+#: litequote.php:199
+msgid "+1 555 123 4567"
+msgstr ""
+
+#: litequote.php:203
+msgid "Hello, I would like a quote for:"
+msgstr ""
+
+#: litequote.php:204
+msgid "Ref."
+msgstr ""
+
+#: litequote.php:205
+msgid "Variation:"
+msgstr ""
