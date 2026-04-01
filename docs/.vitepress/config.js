@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'LiteQuote',
   description: 'Ultra-lightweight quote request plugin for WooCommerce',
-  base: process.env.VITEPRESS_BASE || '/',
+  base: '/litequote/',
   lang: 'en-US',
   head: [
     ['meta', { name: 'theme-color', content: '#0073aa' }],
